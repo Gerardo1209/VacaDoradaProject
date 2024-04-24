@@ -1,0 +1,28 @@
+.background-image {
+  background-image: url("/src/assets/Image/abstract-smooth-brown-wall-background-layout-design-studio-room-web-template-business-report-with-smooth-circle-gradient-color.jpg");
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.bg-nav {
+  background-color: rgba(255, 255, 255, 0.199);
+}
+
+.navbar-brand {
+  flex-grow: 1;
+  text-align: center;
+}
+
+.navbar-image {
+  height: 3rem;
+}
+.bg-list{
+  background: transparent;
+}
+
+#chart {
+  max-width: 650px;
+  margin: 35px auto;
+}
