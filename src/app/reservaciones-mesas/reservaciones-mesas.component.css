@@ -1,5 +1,5 @@
 .background-image {
-    background-image: url("/src/assets/img/54395");
+    background-image: url("../../assets/img/54395.jpg");
     background-size: cover;
     height: 100vh;
     display: flex;
