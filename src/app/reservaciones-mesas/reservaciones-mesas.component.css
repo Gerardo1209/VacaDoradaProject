@@ -1,0 +1,13 @@
+.background-image {
+    background-image: url("/src/assets/img/54395");
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    padding: 50px;
+    display: flex;
+}

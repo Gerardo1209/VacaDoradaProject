@@ -1,0 +1,13 @@
+<div class="background-image">
+    <div class="container">
+        <div class="row">
+            <ng-container *ngFor="let i of array; let index = index">
+                <!-- Cada 5 elementos, comenzar una nueva fila -->
+                <div *ngIf="index % 5 === 0" class="w-100"></div>
+                <div class="col-lg-2">
+                    <app-mesa-card></app-mesa-card>
+                </div>
+            </ng-container>
+        </div>
+    </div>
+</div>
