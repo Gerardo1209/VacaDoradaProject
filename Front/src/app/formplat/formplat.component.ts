@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, NgModule, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-formplat',
@@ -83,3 +85,16 @@ export class FormplatComponent implements OnInit {
     }
   }
 }
+@NgModule({
+  declarations: [
+    FormplatComponent
+  ],
+  imports: [
+    CommonModule,
+    FormsModule // Agrega FormsModule aquí
+  ],
+  exports: [
+    FormplatComponent
+  ]
+})
+export class FormplatModule { }

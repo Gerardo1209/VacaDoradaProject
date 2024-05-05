@@ -11,7 +11,7 @@ export const appConfig: ApplicationConfig = {
   providers: [provideRouter(routes),
   importProvidersFrom(HttpClientModule),
   importProvidersFrom(NgModule),
-  importProvidersFrom(CommonModule),
-  importProvidersFrom(FormsModule) ]
+ importProvidersFrom(CommonModule),
+    importProvidersFrom(FormsModule)]
 
 };
