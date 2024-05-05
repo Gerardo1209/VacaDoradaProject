@@ -1,11 +1,11 @@
 const express = require('express');
 const {body, validationResult} = require('express-validator');
 const router = express.Router();
-const sql = require("./conection");
-const altas = require('./peticiones/altas')
-const bajas = require('./peticiones/bajas')
-const cambios = require('./peticiones/cambios')
-const consultas = require('./peticiones/consultas')
+const sql = require("./connection");
+const altas = require('./paquetes/altas')
+const bajas = require('./paquetes/bajas')
+const cambios = require('./paquetes/cambios')
+const consultas = require('./paquetes/consultas')
 
 router.post('/login',
 [
@@ -19,7 +19,8 @@ router.post('/login',
         return;
     }
     let body = req.body;
-    let q = `SELECT CorreoElectronico, Nombre, Rol, Password FROM usuario WHERE CorreoElectronico="${body.CorreoElectronico}" AND contrasena="${body.contrasena}"`;
+    console.log(body)
+    let q = `SELECT * FROM Usuario WHERE CorreoElectronico="${body.CorreoElectronico}" AND Password="${body.contrasena}"`;
     sql.query(q, (sqlErr, sqlRes) => {
         if(sqlErr){
             console.log(sqlErr);
@@ -30,10 +31,13 @@ router.post('/login',
             res.send({success:false});
             return;
         }
+        console.log(sqlRes[0])
         res.send(sqlRes[0]);
     });
 });
-
+router.get('/', (req, res) => {
+    res.send('¡Hola mundo!');
+  });
 router.use('/alta', altas)
 router.use('/baja', bajas)
 router.use('/cambio', cambios)

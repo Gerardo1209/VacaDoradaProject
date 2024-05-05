@@ -3,7 +3,9 @@ require('dotenv').config();
 const express = require('express');
 const mysql = require('mysql');
 const app = express();
-
+const cors = require('cors');
+// Habilita CORS
+app.use(cors());
 // Crea una conexión a la base de datos MySQL
 const connection = mysql.createConnection({
   host: process.env.DB_HOST,
@@ -31,9 +33,5 @@ const PORT = process.env.PORT || 3000; // Puerto de tu aplicación, 3000 es un e
 
 // Define más rutas según sea necesario
 
-app.listen(PORT, () => {
-  console.log(`Servidor Express escuchando en el puerto ${PORT}`);
-});
 
-// Cierra la conexión cuando hayas terminado
-connection.end();
+

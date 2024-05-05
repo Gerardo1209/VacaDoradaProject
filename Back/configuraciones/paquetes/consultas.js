@@ -1,9 +1,9 @@
 const express = require('express')
 const {body, validationResult} = require('express-validator')
 const router = express.Router()
-const sql = require('../conection')
+const sql = require('../connection')
 
-app.get('/platillos', (req, res) => {
+router.get('/platillos', (req, res) => {
     sql.query(`Select * from Platillo`, (sqlErr,sqlRes)=>{
         if(sqlErr){
             res.send({success:false, err:sqlErr.message})
