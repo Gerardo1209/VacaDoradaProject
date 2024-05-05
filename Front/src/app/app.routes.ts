@@ -12,5 +12,7 @@ export const routes: Routes = [
     { path: 'meseroPedidos', component: MeseroPedidosComponent },
     { path: 'formplat', component: FormplatComponent },
     { path: 'analisis', component: AnalyticComponent },
+    { path: '', component: LoginComponent },
+    { path: '**', component: LoginComponent },
     
 ];
