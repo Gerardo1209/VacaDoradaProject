@@ -1,0 +1,59 @@
+
+.background-image {
+  background-image: url('../../assets/img/54395.jpg');
+  background-size: cover; /* Ajusta el tamaño de la imagen para cubrir el contenedor */
+  height: 100vh; 
+}
+
+    .container {
+        background-color: rgba(255, 255, 255, 0.199); /* Fondo oscuro semitransparente para el contenedor */
+        padding: 20px;
+        border-radius: 10px;
+        margin-top: 50px;
+        color:#000000;
+      }
+      
+      /* Estilos para los inputs y selects */
+      input[type="text"],
+      input[type="file"],
+      select,
+      textarea {
+        background-color: #fffefe15; /* Fondo oscuro para los campos de entrada */
+        color: #000000; /* Letras blancas */
+      }
+      
+      /* Estilo para el botón */
+      button[type="submit"] {
+        background-color: #007bff; /* Color de botón Bootstrap */
+        border-color: #007bff; /* Color de borde de botón Bootstrap */
+      }
+      
+      /* Estilo para el botón al pasar el cursor por encima */
+      button[type="submit"]:hover {
+        background-color: #d000fa; /* Color de botón Bootstrap al pasar el cursor */
+        border-color: #0056b3; /* Color de borde de botón Bootstrap al pasar el cursor */
+      }
+      .custom-btn {
+        height: auto;
+        width: auto ;
+        background-color: transparent;
+        border: none;
+        color: rgb(255, 255, 255); /* Cambia el color de texto según tu preferencia */
+      }
+      
+      #regist{
+
+        border-radius: 20px; /* Borde redondeado */
+        font-size: 16px; /* Tamaño de fuente */
+        padding: 5px 20px; /* Espaciado interno */
+        background-color: #4CAF50; /* Color de fondo */
+        color: white; /* Color del texto */
+        border: none; /* Quitar borde */
+      }
+      #regist:hover {
+        background-color: #000000; /* Cambiar color de fondo al pasar el mouse */
+      }
+      
+      #regist:active {
+        background-color: #8f6126; /* Cambiar color de fondo al hacer clic */
+      }

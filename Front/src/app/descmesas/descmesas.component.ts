@@ -20,26 +20,26 @@ export class DescmesasComponent {
   extras: string[] = ['Extra 1', 'Extra 2', 'Extra 3','Extra 4','Extra 5','Extra 6','Extra 7',  'Extra 8','Extra 8','Extra 8','Extra 8','Extra 8','Extra 8','Extra 8', 'Extra 8','Extra 8','Extra 8','Extra 8','Extra 8','Extra 8','Extra 8','Extra 8', 'Extra 8'];
 // Objeto que mapea el nombre de la mesa con la ruta del icono correspondiente
 mesaIconos: { [mesa: string]: string } = {
-  'Mesa 1': 'assets/img/2.png',
-  'Mesa 2': 'assets/img/3.png',
-  'Mesa 3': 'assets/img/4.png',
-  'Mesa 4': 'assets/img/5.png',
-  'Mesa 5': 'assets/img/6.png',
-  'Mesa 6': 'assets/img/7.png',
-  'Mesa 7': 'assets/img/7.png',
-  'Mesa 8': 'assets/img/7.png'
+  'Mesa 1': '../../assets/img/2.png',
+  'Mesa 2': '../../assets/img/3.png',
+  'Mesa 3': '../../assets/img/4.png',
+  'Mesa 4': '../../assets/img/5.png',
+  'Mesa 5': '../../assets/img/6.png',
+  'Mesa 6': '../../assets/img/7.png',
+  'Mesa 7': '../../assets/img/7.png',
+  'Mesa 8': '../../assets/img/7.png'
 };
 
 mostrarPedido(mesa: string) {
   this.mesaSeleccionada = mesa;
   // Asigna los objetos de platillos con sus propiedades imagen, nombre y precio
   this.pedido = [
-    { imagen: 'assets/img/grilled.jpg', nombre: 'Platillo 1', precio: 10 },
-    { imagen: 'assets/img/whiskey.jpg', nombre: 'Platillo 2', precio: 15 },
-    { imagen: 'assets/img/chocolate.jpg', nombre: 'Platillo 3', precio: 12 },
-    { imagen: 'assets/img/chocolate.jpg', nombre: 'Platillo 4', precio: 12 },
-    { imagen: 'assets/img/chocolate.jpg', nombre: 'Platillo 5', precio: 12 },
-    { imagen: 'assets/img/chocolate.jpg', nombre: 'Platillo 6', precio: 12 }
+    { imagen: '../../assets/img/grilled.jpg', nombre: 'Platillo 1', precio: 10 },
+    { imagen: '../../assets/img/whiskey.jpg', nombre: 'Platillo 2', precio: 15 },
+    { imagen: '../../assets/img/chocolate.jpg', nombre: 'Platillo 3', precio: 12 },
+    { imagen: '../../assets/img/chocolate.jpg', nombre: 'Platillo 4', precio: 12 },
+    { imagen: '../../assets/img/chocolate.jpg', nombre: 'Platillo 5', precio: 12 },
+    { imagen: '../../assets/img/chocolate.jpg', nombre: 'Platillo 6', precio: 12 }
   ];
 }
 

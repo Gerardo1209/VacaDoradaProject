@@ -1,14 +1,91 @@
 import { Component, NgModule, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { CommonModule } from '@angular/common';
+import { HttpClient } from '@angular/common/http';
+import { CommonModule } from '@angular/common'; // Importa CommonModule
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 @Component({
   selector: 'app-formplat',
   templateUrl: './formplat.component.html',
   styleUrls: ['./formplat.component.css']
 })
+
 export class FormplatComponent implements OnInit {
+  miFormulario!: FormGroup;
+  dishName: string = '';
+  dishDescription: string = '';
+  dishType: string = '';
+  price: number | null = null;
+  dishImage: File | null = null;
+  ingredientes: string[] = [];
+  selectedIngredients: { [key: string]: boolean } = {};
+  newIngredient: string = '';
+
+  constructor(private formBuilder: FormBuilder, private http: HttpClient) { }
+
+  ngOnInit(): void {
+    this.miFormulario = this.formBuilder.group({
+      dishName: ['', Validators.required],
+      dishDescription: ['', Validators.required],
+      dishType: ['', Validators.required],
+      price: ['', Validators.required]
+    });
+
+    // Obtener la lista de ingredientes existentes al iniciar el componente
+    this.getIngredientes();
+  }
+
+  onSubmit() {
+    // Lógica para enviar el formulario
+    const formData = {
+      dishName: this.dishName,
+      dishDescription: this.dishDescription,
+      dishType: this.dishType,
+      price: this.price
+    };
+
+    // Enviar los datos al backend
+    this.http.post<any>('/api/nuevo-platillo', formData).subscribe(response => {
+      console.log(response);
+      // Reiniciar el formulario si es necesario
+      this.resetForm();
+    });
+  }
+
+  onFileSelected(event: any) {
+    // Manejar la selección de archivo aquí
+    this.dishImage = event.target.files[0];
+  }
+
+  resetForm() {
+    // Reiniciar los valores del formulario
+    this.dishName = '';
+    this.dishDescription = '';
+    this.dishType = '';
+    this.price = null;
+    this.dishImage = null;
+  }
+
+  getIngredientes() {
+    // Obtener la lista de ingredientes del backend
+    this.http.get<any>('/api/ingredientes').subscribe(response => {
+      this.ingredientes = response.map((ingrediente: any) => ingrediente.Nombre);
+    });
+  }
+
+  agregarNuevoIngrediente() {
+    if (this.newIngredient.trim() && !this.ingredientes.includes(this.newIngredient)) {
+      // Agregar el nuevo ingrediente a la lista
+      this.ingredientes.push(this.newIngredient);
+
+      // Limpiar el campo de nuevo ingrediente
+      this.newIngredient = '';
+    }
+  }
+}
+/*export class FormplatComponent implements OnInit {
   miFormulario!: FormGroup;
   dishName: string = '';
   dishDescription: string = '';
@@ -84,14 +161,18 @@ export class FormplatComponent implements OnInit {
       this.ingredientes.push(nuevoIngrediente);
     }
   }
-}
+}*/
+
+
 @NgModule({
   declarations: [
     FormplatComponent
   ],
   imports: [
-    CommonModule,
-    FormsModule // Agrega FormsModule aquí
+    CommonModule, // Agrega CommonModule aquí
+    FormsModule,
+    ReactiveFormsModule  // Agrega FormsModule aquí
+  
   ],
   exports: [
     FormplatComponent

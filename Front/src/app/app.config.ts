@@ -8,10 +8,11 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 export const appConfig: ApplicationConfig = {
-  providers: [provideRouter(routes),
+  providers: [
+    provideRouter(routes),
   importProvidersFrom(HttpClientModule),
   importProvidersFrom(NgModule),
- importProvidersFrom(CommonModule),
-    importProvidersFrom(FormsModule)]
+  importProvidersFrom(CommonModule),
+  importProvidersFrom(FormsModule)]
 
 };
