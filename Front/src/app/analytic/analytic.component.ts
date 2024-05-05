@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Chart, registerables } from '/node_modules/chart.js'
+import { Chart, registerables } from 'chart.js';
 import { MasterService } from '../service/master.service';
 Chart.register(...registerables);
 

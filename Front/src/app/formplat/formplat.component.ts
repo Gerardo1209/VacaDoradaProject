@@ -1,26 +1,24 @@
-import { Component, NgModule, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+
 @Component({
   selector: 'app-formplat',
-  standalone: true,
-  imports: [
-
-  ],
   templateUrl: './formplat.component.html',
-  styleUrl: './formplat.component.css'
+  styleUrls: ['./formplat.component.css']
 })
-export class FormplatComponent implements OnInit{
+export class FormplatComponent implements OnInit {
   miFormulario!: FormGroup;
   dishName: string = '';
   dishDescription: string = '';
   mainIngredients: string = '';
   dishType: string = '';
-  price: number | null = null; // Ahora la variable price puede ser un número o null
+  price: number | null = null;
   availability: string = '';
   specialDish: string = '';
-  dishImage: File | null = null; // Ahora la variable dishImage puede ser un objeto File o null
+  dishImage: File | null = null;
 
   constructor(private formBuilder: FormBuilder) { }
+
   ngOnInit(): void {
     this.miFormulario = this.formBuilder.group({
       dishName: ['', Validators.required],
@@ -68,7 +66,7 @@ export class FormplatComponent implements OnInit{
     this.dishImage = null;
   }
 
-  ingredientes: string[] = ['Chiles', 'Jitomate', 'Lechuga']; // Lista de ingredientes predefinidos
+  ingredientes: string[] = ['Chiles', 'Jitomate', 'Lechuga'];
   selectedIngredients: { [key: string]: boolean } = {};
   newIngredient: string = '';
 
@@ -80,9 +78,8 @@ export class FormplatComponent implements OnInit{
   }
 
   agregarIngredientePersonalizado(nuevoIngrediente: string) {
-    if (nuevoIngrediente.trim()) { // Verificar si el ingrediente no está vacío
-      this.ingredientes.push(nuevoIngrediente); // Agregar ingrediente a la lista
+    if (nuevoIngrediente.trim()) {
+      this.ingredientes.push(nuevoIngrediente);
     }
   }
-
 }
