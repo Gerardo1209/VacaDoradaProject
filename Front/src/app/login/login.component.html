@@ -5,18 +5,16 @@
             <img src="../../assets/img/logo.png" alt="Vaca Dorada">
             <i class="fa-solid fa-bars-staggered"></i>
         </div>
-
-        <form>
             <div class="mb-3">
                 <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                    placeholder="Username">
+                    placeholder="Correo Electrónico"   required>
             </div>
             <div class="mb-3">
-                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Contraseña"
+                 required>
             </div>
             <div class="mb-3">
-                <button type="submit" class="btn">Login</button>
+                <button  (click)="login()" type="submit" class="btn">Login</button>
             </div>
-        </form>
     </div>
 </div>

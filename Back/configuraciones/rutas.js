@@ -15,7 +15,14 @@ router.post('/login',
 (req, res) => {
     const errors = validationResult(req);
     if(!errors.isEmpty()){
-        res.json({success:false, err:JSON.stringify(errors)});
+        const errorMessages = errors.array().map(error => {
+            return {
+                type: error.location,
+                value: error.value,
+                msg: error.msg
+            };
+        });
+        res.json({ success: false, errors: errorMessages });
         return;
     }
     let body = req.body;
