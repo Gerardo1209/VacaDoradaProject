@@ -6,10 +6,6 @@ import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } 
 
 @Component({
   selector: 'app-formplat',
-  imports: [
-    CommonModule,
-    FormsModule
-  ],
   templateUrl: './formplat.component.html',
   styleUrls: ['./formplat.component.css']
 })

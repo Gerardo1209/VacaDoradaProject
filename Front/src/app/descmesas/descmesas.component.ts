@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Component, NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 interface Platillo {
   imagen: string;
@@ -8,8 +10,6 @@ interface Platillo {
 
 @Component({
   selector: 'app-descmesas',
-  standalone: true,
-  imports: [],
   templateUrl: './descmesas.component.html',
   styleUrl: './descmesas.component.css'
 })
@@ -47,3 +47,18 @@ mostrarExtras(platillo: Platillo) {
   this.extras = ['Extra 1 para ' + platillo.nombre, 'Extra 2 para ' + platillo.nombre, 'Extra 3 para ' + platillo.nombre];
 }
 }
+@NgModule({
+  declarations: [
+    DescmesasComponent  
+  ],
+  imports: [
+    CommonModule, // Agrega CommonModule aquí
+    FormsModule,
+    ReactiveFormsModule  // Agrega FormsModule aquí
+  
+  ],
+  exports: [
+    DescmesasComponent
+  ]
+})
+export class DescmesasModule { }

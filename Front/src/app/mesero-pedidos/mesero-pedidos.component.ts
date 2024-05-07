@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
 interface Order {
@@ -15,10 +15,8 @@ interface Order {
 
 @Component({
   selector: 'app-root',
-  standalone: true,
-  imports: [RouterOutlet, CommonModule],
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  templateUrl: './mesero-pedidos.component.html',
+  styleUrls: ['./mesero-pedidos.component.css']
 })
 export class MeseroPedidosComponent {
   orders: Order[] = [
@@ -46,3 +44,18 @@ export class MeseroPedidosComponent {
   displayedColumns: string[] = ['tableNumber', 'status', 'items'];
   //dataSource = new MatTableDataSource(this.orders);
 }
+
+@NgModule({
+  declarations: [
+    MeseroPedidosComponent
+  ],
+  imports: [
+    RouterOutlet, // Agrega CommonModule aquí
+    CommonModule,
+  
+  ],
+  exports: [
+    MeseroPedidosComponent
+  ]
+})
+export class FormplatModule { }
