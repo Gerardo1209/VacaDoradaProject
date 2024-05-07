@@ -1,13 +1,15 @@
-import { Component, NgModule, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { HttpClient } from '@angular/common/http';
 import { CommonModule } from '@angular/common'; // Importa CommonModule
-import { FormsModule } from '@angular/forms';
-import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
+import { Component, NgModule, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 
 
 @Component({
   selector: 'app-formplat',
+  imports: [
+    CommonModule,
+    FormsModule
+  ],
   templateUrl: './formplat.component.html',
   styleUrls: ['./formplat.component.css']
 })

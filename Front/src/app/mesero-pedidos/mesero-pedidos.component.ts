@@ -1,8 +1,6 @@
-import { MeseroPedidosComponent } from './mesero-pedidos.component';
-import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { MatTableModule, MatTableDataSource } from '@angular/material/table'; // import MatTableDataSource here
 
 interface Order {
   tableNumber: number;
@@ -18,7 +16,7 @@ interface Order {
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, MatTableModule, CommonModule],
+  imports: [RouterOutlet, CommonModule],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
@@ -46,5 +44,5 @@ export class MeseroPedidosComponent {
   ];
 
   displayedColumns: string[] = ['tableNumber', 'status', 'items'];
-  dataSource = new MatTableDataSource(this.orders);
+  //dataSource = new MatTableDataSource(this.orders);
 }

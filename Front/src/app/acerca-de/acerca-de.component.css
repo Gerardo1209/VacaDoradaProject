@@ -1,0 +1,84 @@
+.background-image {
+    background-image: url("../../assets/img/54395.jpg");
+    background-size: cover;
+    height: min(100vh, 100%);
+    margin: 0;
+}
+
+.encabezado {
+    background-image: url("../../assets/img/grilled-beef.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 300px;
+    color: white;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+}
+
+.banner {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner-img {
+    width: 350px;
+    height: 250px;
+    border-radius: 35px;
+}
+
+.banner-info {
+    margin-top: 40px;
+    color: rgb(20, 20, 18);
+    text-align: left;
+}
+
+.valores-img,
+.sobreNosotros-img {
+    width: 350px;
+    border-radius: 35px;
+}
+
+.valores-info {
+    margin-right: 25px;
+}
+
+.valores-img {
+    width: 100%;
+    height: 350px;
+    display: block;
+}
+
+.titulos {
+    color: white;
+}
+
+.sobreNosotros,
+.valores,
+.chef {
+    margin: 0 auto;
+    width: 75%;
+    margin-top: 80px;
+}
+
+.sobreNosotros {
+    border: 3px solid #7C0707;
+    border-radius: 15px;
+}
+
+.chef h2,
+.sobreNosotros h2 {
+    color: white;
+}
+
+.valores h2,
+.chef h3 {
+    color: #830505;
+}
+
+.texto {
+    color: white;
+    text-align: justify;
+}

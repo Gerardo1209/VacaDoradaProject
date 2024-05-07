@@ -1,0 +1,39 @@
+.background-image {
+    background-image: url("../../assets/img/wood-material.jpg");
+    background-size: cover;
+    height: min(100vh, 100%);
+    margin: 0;
+}
+
+.logo {
+    width: 40%;
+    max-height: 50%;
+    display: block;
+}
+
+.btn-iniciar {
+    background-color: #543300;
+    color: white;
+}
+
+.btn-mesero {
+    background-color: #FFBD59;
+    color: white;
+}
+
+.btn-container {
+    margin: 0 auto;
+    width: 70%;
+}
+
+.wooden-text {
+    font-size: 56px;
+    font-weight: bold;
+    text-align: center;
+    background: linear-gradient(to right, #FFD700, #E6BE8A);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    display: inline-block;
+    margin-block-end: 50px;
+}
