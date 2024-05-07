@@ -1,0 +1,28 @@
+.redirec{
+    background-image: url('../../assets/img/54395.jpg');
+    background-size:cover; /* Ajusta el tamaño de la imagen para cubrir el contenedor */
+    height: 100%; 
+    
+  }
+
+.buttons{
+    display: flex; /* Utiliza flexbox */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    height: 100vh;
+}
+
+.buttons button {
+    margin: 10px; /* Margen entre botones */
+    padding: 10px 20px; /* Padding interno del botón */
+    border: none; /* Quita el borde del botón */
+    border-radius: 5px; /* Borde redondeado */
+    background-color: #a50303; /* Color de fondo del botón */
+    color: #fff; /* Color del texto del botón */
+    cursor: pointer; /* Cursor al pasar sobre el botón */
+    transition: background-color 0.3s ease; /* Transición suave del color de fondo */
+}
+
+.buttons button:hover {
+    background-color: #ff4040; /* Color de fondo del botón al pasar el mouse */
+}

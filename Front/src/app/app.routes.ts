@@ -7,6 +7,7 @@ import { InicioComponent } from './inicio/inicio.component';
 import { LoginComponent } from './login/login.component';
 import { MeseroPedidosComponent } from './mesero-pedidos/mesero-pedidos.component';
 import { ReservacionesMesasComponent } from './reservaciones-mesas/reservaciones-mesas.component';
+import { RedireccionComponent } from './redireccion/redireccion.component';
 
 export const routes: Routes = [
     { path: 'reservacionMesas', component: ReservacionesMesasComponent },
@@ -16,6 +17,7 @@ export const routes: Routes = [
     { path: 'descmesas', component: DescmesasComponent },
     { path: 'formplat', component: FormplatComponent},
     { path: 'inicio', component: InicioComponent },
+    { path: 'redireccion', component: RedireccionComponent},
     { path: 'acercaDe', component: AcercaDeComponent },
     { path: '', component: LoginComponent },
     { path: '**', component: LoginComponent },

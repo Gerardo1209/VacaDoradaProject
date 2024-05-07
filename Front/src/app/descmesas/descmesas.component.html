@@ -30,7 +30,7 @@
                 </tr>
               </thead>
               <tbody>
-                <tr *ngFor="let item of pedido">
+                <tr *ngFor="let item of platillos">
                   <td (click)="mostrarExtras(item)">
                     <img [src]="item.imagen" alt="{{ item.nombre }}" style="width: 100px; height: 100px; cursor: pointer;">
                     <div>{{ item.nombre }}</div>
