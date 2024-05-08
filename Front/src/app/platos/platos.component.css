@@ -1,0 +1,13 @@
+h1{
+    color: aliceblue;
+}
+
+div{
+    background-color: rgba(255, 255, 255, 0.199);
+}
+
+.card-img-top {
+    width: 100%;
+    height: 200px; /* Ajusta la altura según tus necesidades */
+    object-fit: cover; /* Ajusta el tamaño de la imagen manteniendo la relación de aspecto */
+  }
