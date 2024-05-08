@@ -27,7 +27,7 @@ router.post('/login',
     }
     let body = req.body;
     console.log(body)
-    let q = `SELECT * FROM Usuario WHERE CorreoElectronico="${body.CorreoElectronico}" AND Password="${body.contrasena}"`;
+    let q = `SELECT * FROM Usuario WHERE CorreoElectronico="${body.CorreoElectronico}" AND Password="${body.contrasena}";`;
     sql.query(q, (sqlErr, sqlRes) => {
         if(sqlErr){
             console.log(sqlErr);

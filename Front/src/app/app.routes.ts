@@ -19,6 +19,6 @@ export const routes: Routes = [
     { path: 'inicio', component: InicioComponent },
     { path: 'redireccion', component: RedireccionComponent},
     { path: 'acercaDe', component: AcercaDeComponent },
-    { path: '', component: LoginComponent },
+    { path: '', component: InicioComponent },
     { path: '**', component: LoginComponent },
 ];
