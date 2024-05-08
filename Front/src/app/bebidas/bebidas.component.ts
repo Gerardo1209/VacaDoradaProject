@@ -1,12 +1,20 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
+import { AppComponent } from '../app.component';
 
 @Component({
   selector: 'app-bebidas',
-  standalone: true,
-  imports: [],
   templateUrl: './bebidas.component.html',
-  styleUrl: './bebidas.component.css'
+  styleUrls: ['./bebidas.component.css']
 })
 export class BebidasComponent {
+  @Output() orderPlaced = new EventEmitter<string>(); // Emite un evento cuando se realiza un pedido
 
+  constructor(private appComponent: AppComponent) {} // Inyecta AppComponent
+
+  placeOrder(bebidas: string) {
+    this.orderPlaced.emit(bebidas); // Emite un evento con el nombre de la beida
+    this.appComponent.addOrder(bebidas); // Llama al método addOrder del componente AppComponent
+  }
 }
+
+

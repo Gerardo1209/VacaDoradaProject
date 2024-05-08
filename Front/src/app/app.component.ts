@@ -11,6 +11,15 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
+pay() {
+throw new Error('Method not implemented.');
+}
+orderItems() {
+throw new Error('Method not implemented.');
+}
+  addOrder(plato: string) {
+    throw new Error('Method not implemented.');
+  }
   title = 'VacaDoradaProject';
 
 

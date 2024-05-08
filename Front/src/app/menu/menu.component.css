@@ -1,0 +1,45 @@
+p {
+    font-family: Lato;
+   }
+   nav a {
+
+    padding: 5px 10px;
+    text-decoration: none;
+    margin-top: 10px;
+    display: inline-block;
+    background-color: rgba(255, 255, 255, 0.199);
+    border-radius: 4px;
+   }
+   a{
+    margin-right: 3px;
+   }
+
+   .left-side{
+    min-width: 75%;
+   }
+
+ 
+  input[type="checkbox"] {
+    color: white;
+  }
+
+  label {
+    color: white;
+  }
+
+  .navbar {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: #f8f9fa; /* Color de fondo */
+    padding: 10px; /* Espaciado interno */
+  }
+
+  .nav-item {
+    margin-right: 10px; /* Espaciado entre elementos */
+  }
+
+  /* Estilos para el botón del carrito */
+  #btn-cart {
+    margin-right: 20px; /* Espaciado desde el borde */
+  }

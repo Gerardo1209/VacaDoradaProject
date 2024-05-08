@@ -8,10 +8,10 @@ describe('PlatosComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [PlatosComponent]
+      declarations: [ PlatosComponent ]
     })
     .compileComponents();
-    
+
     fixture = TestBed.createComponent(PlatosComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
