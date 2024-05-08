@@ -17,7 +17,7 @@ export class FormplatComponent implements OnInit {
   dishType: string = '';
   price: number | null = null;
   dishImage: File | null = null;
-  ingredientes: string[] = [];
+  ingredientes: any;
   selectedIngredients: { [key: string]: boolean } = {};
   newIngredient: string = '';
 
@@ -32,7 +32,15 @@ export class FormplatComponent implements OnInit {
     });
 
     // Obtener la lista de ingredientes existentes al iniciar el componente
-    this.getIngredientes();
+    //this.getIngredientes();
+    console.log("Ingredientes de BD: ",this.ingredientes);
+    this.http.get<any>('http://localhost:3000/consulta/ingredientes').subscribe(data => {
+      this.ingredientes = data; // Almacenamos los datos en la variable 'ingredientes'
+      console.log("Ingredientes de BD: ",this.ingredientes);
+      console.log("Ingredientes de BD DATA: ",data);
+
+    });
+
   }
 
   onSubmit() {
@@ -66,12 +74,12 @@ export class FormplatComponent implements OnInit {
     this.dishImage = null;
   }
 
-  getIngredientes() {
+ /* getIngredientes() {
     // Obtener la lista de ingredientes del backend
     this.http.get<any>('/api/ingredientes').subscribe(response => {
       this.ingredientes = response.map((ingrediente: any) => ingrediente.Nombre);
     });
-  }
+  }*/
 
   agregarNuevoIngrediente() {
     if (this.newIngredient.trim() && !this.ingredientes.includes(this.newIngredient)) {
