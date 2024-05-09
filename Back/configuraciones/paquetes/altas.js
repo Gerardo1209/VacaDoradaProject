@@ -37,7 +37,9 @@ const sql = require('../connection')
   });
   // Consulta para insertar un nuevo ingrediente
   router.post('/nuevo-ingrediente', (req, res) => {
+    const body = req.body;
     const { newIngredient } = req.body;
+    
     sql.query(`
         INSERT INTO Ingrediente (Nombre)
         VALUES (?)

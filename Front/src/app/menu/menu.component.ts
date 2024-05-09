@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Component, NgModule } from '@angular/core';
 
 @Component({
-  selector: 'app-root',
+  selector: 'app-menu',
   templateUrl: './menu.component.html',
   styleUrls: ['./menu.component.css']
 })
@@ -43,3 +44,14 @@ export class MenuComponent {
   }
 }
 
+@NgModule({
+  declarations: [
+    // Your component declarations
+  ],
+  imports: [
+    CommonModule, // Import CommonModule here
+    // Other module imports
+  ],
+  // Other metadata
+})
+export class MenuModule { }
