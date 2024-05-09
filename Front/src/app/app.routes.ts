@@ -12,6 +12,8 @@ import { BebidasComponent } from './bebidas/bebidas.component';
 import { PostresComponent } from './postres/postres.component';
 import { PlatosComponent } from './platos/platos.component';
 import { MenuComponent } from './menu/menu.component';
+import { GeneraCodigoComponent } from './genera-codigo/genera-codigo.component';
+import { IngresaCodigoComponent } from './ingresa-codigo/ingresa-codigo.component';
 
 
 export const routes: Routes = [
@@ -24,7 +26,10 @@ export const routes: Routes = [
     { path: 'inicio', component: InicioComponent },
     { path: 'redireccion', component: RedireccionComponent},
     { path: 'acercaDe', component: AcercaDeComponent },
-    
+   
+    { path: 'codigo', component: GeneraCodigoComponent },
+    { path: 'ingresarCodigo', component: IngresaCodigoComponent },
+
     { path: 'bebidas', component: BebidasComponent },
     { path: 'postres', component: PostresComponent },
     { path: 'platos', component: PlatosComponent },

@@ -1,13 +1,19 @@
 .background-image {
     background-image: url("../../assets/img/54395.jpg");
     background-size: cover;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .container{
-    padding: 50px;
+    margin: 50px;
     display: flex;
+}
+
+ .a-center{
+    text-align: center;
+    justify-content: space-around;
+    height: 100%;
 }

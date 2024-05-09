@@ -1,0 +1,27 @@
+.background-image {
+    background-image: url("../../assets/img/54395.jpg");
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.left-half {
+    width: 50%;
+    float: right;
+    text-align: center;
+    color: white;
+    justify-content: center;
+    margin: 0;
+}
+.right-half {
+    width: 50%;
+}
+.right-half img {
+    width: 100%;
+}
+.text p{
+font-size: 60px;
+}
+

@@ -62,6 +62,17 @@ router.get('/ingredientes', (req, res) => {
     });
 });
 
+//Consulta para obtener los datos de las mesas
+router.get('/mesas', (req,res) => {
+    sql.query(`SELECT * FROM Mesa;`, (sqlErr, sqlRes) => {
+        if(sqlErr){
+            res.send({success:false, err:sqlErr.message});
+            return;
+        }
+        res.send(sqlRes);
+    });
+})
+
 
 
 //----------------------------------------------------------------------------------------Pruebas

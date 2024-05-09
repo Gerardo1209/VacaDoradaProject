@@ -2,7 +2,7 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-import { Usuario } from '../../interfaces';
+import { Mesa, Usuario } from '../../interfaces';
 
 @Injectable({
   providedIn: 'root'
@@ -36,4 +36,47 @@ export class ConnectionbdService {
         })
       );
   }
+
+  getMesas():Observable<Mesa[]>{
+    return this.http.get<any>(`${this.apiUrl}/consulta/mesas`).pipe(
+      catchError((error: HttpErrorResponse) => {
+        let errorMessage = 'Error desconocido';
+        if (error.error instanceof ErrorEvent) {
+          // Error del lado del cliente
+          errorMessage = `Error: ${error.error.message}`;
+        } else {
+          // Error del lado del servidor
+          errorMessage = `Código: ${error.status}, Mensaje: ${error.error.message}`;
+        }
+        console.error(errorMessage);
+        return throwError(errorMessage);
+      })
+    );
+  }
+
+  altaCodigo(codigo: string, nomesa: string): Observable<Usuario> {
+    console.log(codigo)
+    console.log(nomesa)
+    const body = {
+      codigo: codigo,
+      nomesa: nomesa
+    };
+
+    return this.http.post<any>(`${this.apiUrl}/altaCodigo`, body)
+      .pipe(
+        catchError((error: HttpErrorResponse) => {
+          let errorMessage = 'Error desconocido';
+          if (error.error instanceof ErrorEvent) {
+            // Error del lado del cliente
+            errorMessage = `Error: ${error.error.message}`;
+          } else {
+            // Error del lado del servidor
+            errorMessage = `Código: ${error.status}, Mensaje: ${error.error.message}`;
+          }
+          console.error(errorMessage);
+          return throwError(errorMessage);
+        })
+      );
+  }
+
 }

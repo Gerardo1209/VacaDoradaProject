@@ -1,14 +1,21 @@
 <!--Contenedor de todo el componente -->
-<div class="card-mesa text-center" style="width: 300px;">
-    <!--Contenedor del semáforo de botones-->
-    <button type="button" class="btn btn-dark">Reservar</button>
-    <div class="card-transparent buttons">
-        <button type="button" class="btn btn-success">D</button>
-        <button type="button" class="btn btn-danger">O</button>
+@if(mesa){
+    <div class="card-mesa text-center" style="width: 300px;">
+        <!--Contenedor del semáforo de botones-->
+        <button type="button" class="btn btn-dark"[disabled]="mesa.Estado!='Libre'" (click)="generaCodigo()" >Reservar</button>
+        <div class="card-transparent buttons">
+            @if (this.mesa.Estado=='Libre') {
+                <button type="button" class="btn btn-success" disabled>D</button>
+            }
+            @else {
+                <button type="button" class="btn btn-danger" disabled>O</button>
+            }
+        </div>
+        <!--Contenedor de la imagen de la mesa-->
+        <div class="card-transparent mesa" style="width: 200px;">
+            <img src="../../assets/img/mesa.png" class="card-img-top" alt="...">
+        </div>
+        <h2 style="color: white">Mesa {{mesa.NoMesa}}</h2>
+        <p >Capacidad: {{mesa.Capacidad}}</p>
     </div>
-    <!--Contenedor de la imagen de la mesa-->
-    <div class="card-transparent mesa" style="width: 200px;">
-        <img src="../../assets/img/mesa.png" class="card-img-top" alt="...">
-    </div>
-    <p>Mesa 1</p>
-</div>
+}

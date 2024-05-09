@@ -1,12 +1,14 @@
-<div class="background-image">
+<div class="background-image d-flex align-items-center justify-content-center">
     <div class="container">
-        <div class="row">
-            <ng-container *ngFor="let i of array; let index = index">
-                <!-- Cada 5 elementos, comenzar una nueva fila -->
-                <div *ngIf="index % 5 === 0" class="w-100"></div>
-                <div class="col-lg-2">
-                    <app-mesa-card></app-mesa-card>
+        <div class="row a-center">
+            <ng-container *ngFor="let item of mesas; let index = index">
+                
+                <!-- Cada 3 elementos, comenzar una nueva fila -->
+                <div *ngIf="index % 3 === 0" class="w-100"></div><br><br>
+                <div class="col-lg-4">
+                    <app-mesa-card [mesa]="item"></app-mesa-card>
                 </div>
+                
             </ng-container>
         </div>
     </div>
