@@ -1,4 +1,4 @@
-p {
+/* p {
     font-family: Lato;
    }
    nav a {
@@ -31,15 +31,15 @@ p {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    background-color: #f8f9fa; /* Color de fondo */
-    padding: 10px; /* Espaciado interno */
+    background-color: #f8f9fa; /* Color de fondo 
+    padding: 10px; /* Espaciado interno 
   }
 
   .nav-item {
-    margin-right: 10px; /* Espaciado entre elementos */
+    margin-right: 10px; /* Espaciado entre elemento
   }
 
-  /* Estilos para el botón del carrito */
+  /* Estilos para el botón del carrito 
   #btn-cart {
-    margin-right: 20px; /* Espaciado desde el borde */
-  }
+    margin-right: 20px; /* Espaciado desde el bord
+  }*/

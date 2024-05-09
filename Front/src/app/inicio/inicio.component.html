@@ -2,9 +2,7 @@
     <img src="../../assets/img/logo.png" alt="Logo" class="logo">
     <h1 class="wooden-text">La Vaca Dorada</h1>
     <div class="d-flex btn-container justify-content-evenly">
-        <button type="button" class="btn btn-iniciar btn-lg">Iniciar</button>
-        <button type="button" class="btn btn-mesero btn-lg">Mesero</button>
-        <button type="button" class="btn btn-mesero btn-lg">Reservaciones</button>
-        <a routerLink="/reservaciones-mesas" routerLinkActive="active" style="color: #e6a06e;">Reservaciones</a>
+        <button class=" btn btn-danger btn-iniciar" (click)="navigateToLogin()">Inicio</button>
+        <button class="btn btn-danger btn-mesero " (click)="navigateToReservaciones()">Reservaciones</button>
     </div>
 </div>
