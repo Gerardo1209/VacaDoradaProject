@@ -13,6 +13,16 @@ router.get('/platillos', (req, res) => {
     })
   });
 
+  router.get('/mesas', (req, res) => {
+    sql.query(`Select * from Mesa;`, (sqlErr,sqlRes)=>{
+        if(sqlErr){
+            res.send({success:false, err:sqlErr.message})
+            return
+        }
+        res.send(sqlRes)
+    })
+  });
+
 
 
 //-------------------------------------------------------------------Vistas de ANA

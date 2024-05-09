@@ -1,8 +1,8 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, throwError } from 'rxjs';
+import { Observable, Observer, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-import { Usuario } from '../../interfaces';
+import { Mesa, Usuario } from '../../interfaces';
 
 @Injectable({
   providedIn: 'root'
@@ -35,5 +35,21 @@ export class ConnectionbdService {
           return throwError(errorMessage);
         })
       );
+  }
+  getMesas():Observable<any>{
+    return this.http.get<any>(`${this.apiUrl}/consulta/mesas`).pipe(
+      catchError((error: HttpErrorResponse) => {
+        let errorMessage = 'Error desconocido';
+        if (error.error instanceof ErrorEvent) {
+          // Error del lado del cliente
+          errorMessage = `Error: ${error.error.message}`;
+        } else {
+          // Error del lado del servidor
+          errorMessage = `Código: ${error.status}, Mensaje: ${error.error.message}`;
+        }
+        console.error(errorMessage);
+        return throwError(errorMessage);
+      })
+    );
   }
 }
