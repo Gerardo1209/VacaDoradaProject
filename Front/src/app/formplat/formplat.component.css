@@ -57,3 +57,12 @@
       #regist:active {
         background-color: #8f6126; /* Cambiar color de fondo al hacer clic */
       }
+
+      .ingredientes-columns {
+        display: flex;
+      }
+      
+      .column {
+        flex: 1;
+        padding: 0 10px;
+      }

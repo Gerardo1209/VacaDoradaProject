@@ -47,15 +47,21 @@
           </div>
           <div class="form-group">
             <label>Ingredientes:</label>
-            <ul>
-              <li *ngFor="let item of ingredientes"><tr>{{item.Nombre}}</li>
-                
-            </ul>
+              <div class="ingredientes-columns">
+                <ul class="column">
+                   <li *ngFor="let item of ingredientes.slice(0, ingredientes.length / 2)">{{ item.Nombre }}</li>
+                </ul>
+                <ul class="column">
+                   <li *ngFor="let item of ingredientes.slice(ingredientes.length / 2)">{{ item.Nombre }}</li>
+                </ul>
+              </div>
           </div>
           <div class="form-group">
             <label for="nuevoIngrediente">Agregar Nuevo Ingrediente:</label>
-            <input type="text" class="form-control" id="nuevoIngrediente" [(ngModel)]="newIngredient" name="nuevoIngrediente">
-            <button class="btn custom-btn" (click)="agregarNuevoIngrediente()">Agregar</button>
+            <input type="text" class="form-control" id="nuevoIngrediente" [(ngModel)]="nuevoIngrediente" name="nuevoIngrediente">
+            <label for="nuevoIngrediente">Cantidad:</label>
+            <input type="text" class="form-control" id="cantidad" [(ngModel)]="cantidad" name="cantidad">
+            <button class="btn custom-btn" (click)="nuevoIngrediente()">Agregar</button>
           </div>
           <div class="form-group">
             <button type="submit" class="btn btn-primary" id="regist">Registrar</button>

@@ -19,7 +19,9 @@ export class FormplatComponent implements OnInit {
   dishImage: File | null = null;
   ingredientes: any;
   selectedIngredients: { [key: string]: boolean } = {};
-  newIngredient: string = '';
+  nuevoIngrediente: any;
+  cantidad:any;
+  longit: number = 1;
 
   constructor(private formBuilder: FormBuilder, private http: HttpClient) { }
 
@@ -38,8 +40,16 @@ export class FormplatComponent implements OnInit {
       this.ingredientes = data; // Almacenamos los datos en la variable 'ingredientes'
       console.log("Ingredientes de BD: ",this.ingredientes);
       console.log("Ingredientes de BD DATA: ",data);
+      this.longit = this.ingredientes.length;
+      console.log("Cantidad de registros: ", this.longit);
 
     });
+
+    // Obtener el nuevo ingrediente
+  this.http.get<any>('http://localhost:3000/consulta/ingredientes').subscribe(data => {
+    this.nuevoIngrediente = data;
+    console.log("Nuevo ingrediente: ", this.nuevoIngrediente);
+  });
 
   }
 
@@ -81,6 +91,7 @@ export class FormplatComponent implements OnInit {
     });
   }*/
 
+  /*
   agregarNuevoIngrediente() {
     if (this.newIngredient.trim() && !this.ingredientes.includes(this.newIngredient)) {
       // Agregar el nuevo ingrediente a la lista
@@ -90,6 +101,7 @@ export class FormplatComponent implements OnInit {
       this.newIngredient = '';
     }
   }
+  */
 }
 /*export class FormplatComponent implements OnInit {
   miFormulario!: FormGroup;
